@@ -1,18 +1,13 @@
+
+# AI-Driven Stock Selection & Portfolio Optimization System
 <p align="center">
-  <img src="https://img.shields.io/badge/Project-AI-Driven%20Stock%20Selection-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Project-AI_Driven_Stock_Selection-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Python-3.10+-yellow?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?style=for-the-badge&logo=tensorflow">
+  <img src="https://img.shields.io/badge/TensorFlow-Deep_Learning-orange?style=for-the-badge&logo=tensorflow">
   <img src="https://img.shields.io/badge/Flask-Backend-black?style=for-the-badge&logo=flask">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
 </p>
 
-# AI-Driven Stock Selection & Portfolio Optimization System
-
-[![Project](https://img.shields.io/badge/Project-AI-Driven%20Stock%20Selection-blue)]()
-[![Python](https://img.shields.io/badge/Python-3.10+-yellow)]()
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange)]()
-[![Flask](https://img.shields.io/badge/Flask-Backend-black)]()
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen)]()
 
 ## 1. Project Overview
 
