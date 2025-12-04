@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Project-AI%20Stock%20Analyzer-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Project-AI-Driven%20Stock%20Selection-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Python-3.10+-yellow?style=for-the-badge&logo=python">
   <img src="https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?style=for-the-badge&logo=tensorflow">
   <img src="https://img.shields.io/badge/Flask-Backend-black?style=for-the-badge&logo=flask">
@@ -8,7 +8,7 @@
 
 # AI-Driven Stock Selection & Portfolio Optimization System
 
-[![Project](https://img.shields.io/badge/Project-AI%20Stock%20Analyzer-blue)]()
+[![Project](https://img.shields.io/badge/Project-AI-Driven%20Stock%20Selection-blue)]()
 [![Python](https://img.shields.io/badge/Python-3.10+-yellow)]()
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange)]()
 [![Flask](https://img.shields.io/badge/Flask-Backend-black)]()
@@ -48,7 +48,7 @@ Frontend:
 
 ## 3. Installation
 
-git clone <https://github.com/Manoj-1022/AI-Driven-Stock-Selection>
+git clone https://github.com/Manoj-1022/AI-Driven-Stock-Selection 
 cd <project-folder>
 
 pip install -r requirements.txt
@@ -62,19 +62,21 @@ AI-Driven-Stock-Selection/
 ├── fundamentals.pkl
 ├── requirements.txt
 ├── datasets/
-│     ├── STOCK.csv
-│     ├── STOCK_clean.csv
-│     ├── portfolio2.csv
-│     └── gold.csv
+│   ├── STOCK.csv
+│   ├── STOCK_clean.csv
+│   ├── portfolio2.csv
+│   └── gold.csv
 ├── templates/
-│     ├── home.html
-│     ├── test.html
-│     ├── portfolio.html
-│     └── trade_calculator.html
+│   ├── home.html
+│   ├── test.html
+│   ├── portfolio.html
+│   └── trade_calculator.html
 └── static/
-      ├── css/style.css
-      ├── images/Logo.png
-      └── pdfs/
+    ├── css/
+    │   └── style.css
+    ├── images/
+    │   └── Logo.png
+    └── pdfs/
 
 ## 5. Dataset Formats
 
