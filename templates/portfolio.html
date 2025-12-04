@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Allocation</title>
+
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    .card {
+      background-color: #222;
+      border-radius: 12px;
+      padding: 40px;
+      width: 550px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.06);
+    }
+
+    .card i {
+      font-size: 40px;
+      color: #f9b121;
+      margin-bottom: 20px;
+    }
+
+    input,
+    button {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    input {
+      background-color: #333;
+      color: white;
+    }
+
+    button {
+      background-color: #3768ca;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .back-btn {
+      background-color: #6c757d;
+    }
+
+    .back-btn:hover {
+      background-color: #555;
+    }
+
+    .result {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .allocation {
+      background-color: #1b1b1b;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
+      border-left: 4px solid #f9b121;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <i>💼 Portfolio Allocation</i>
+
+    <form id="portfolioForm">
+      <input
+        type="number"
+        id="totalInvestment"
+        placeholder="Enter total investment ( Min ₹ 5000)"
+        required
+      />
+      <input
+        type="text"
+        id="stocks"
+        placeholder="Enter stocks separated by comma (e.g., TCS.NS, INFY.NS, HDFC.NS)"
+        required
+      />
+
+      <button type="button" onclick="simulatePortfolio()">Allocate</button>
+      <button type="button" class="back-btn" onclick="goBack()">⬅ Back</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function simulatePortfolio() {
+      const total = parseFloat(document.getElementById("totalInvestment").value);
+      const stocksInput = document
+        .getElementById("stocks")
+        .value.trim();
+      const resultDiv = document.getElementById("result");
+
+      resultDiv.innerHTML = "";
+
+      if (!total || !stocksInput) {
+        alert("Enter valid amount and stock list.");
+        return;
+      }
+
+      const stocks = stocksInput
+        .split(",")
+        .map(s => s.trim().toUpperCase());
+
+      fetch("/simulate_portfolio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ total: total, stocks: stocks })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.error) {
+            resultDiv.innerHTML =
+              `<p style="color:red;">${data.error}</p>`;
+            return;
+          }
+
+          resultDiv.innerHTML =
+            `<h3>Portfolio Allocation Result</h3>`;
+
+          data.allocations.forEach(item => {
+            resultDiv.innerHTML += `
+              <div class="allocation">
+                <strong>${item.Stock}</strong><br>
+                Score: ${item.Score}<br>
+                Weight: ${item.Weight}%<br>
+                Investment: ₹${item.Amount}
+              </div>
+            `;
+          });
+        })
+        .catch(err => {
+          resultDiv.innerHTML =
+            `<p style="color:red;">Request Failed: ${err}</p>`;
+        });
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
